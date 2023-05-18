@@ -27,4 +27,19 @@ public class ExperienceManager : MonoBehaviour
         // ? is safeguard for nulls
         OnExperienceChannge?.Invoke(amount);
     }
+
+    public void Add100Exp()
+    {
+        AddExperience(100);
+    }
+
+    public void Add250Exp()
+    {
+        AddExperience(250);
+    }
+
+    public void Add1000Exp()
+    {
+        AddExperience(1000);
+    }
 }
