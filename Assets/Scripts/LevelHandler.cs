@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -30,7 +31,8 @@ public class LevelHandler : MonoBehaviour
     private void Awake()
     {
         levelText.text = "Level " + currentLevel;
-        expText.text = currentExperience + "/" + maxExperience;
+        expText.text = String.Format("{0:0}", (float)currentExperience / (float)maxExperience * 100f) + "%";
+
         expBar.maxValue = maxExperience;
         expBar.value = currentExperience;
     }
@@ -39,7 +41,7 @@ public class LevelHandler : MonoBehaviour
     {
         // Update current experience and text
         currentExperience += newExperience;
-        expText.text = currentExperience + "/" + maxExperience;
+        expText.text = String.Format("{0:0}", (float)currentExperience / (float)maxExperience * 100f) + "%";
         expBar.value = currentExperience;
 
         if (currentExperience >= maxExperience)
@@ -75,7 +77,7 @@ public class LevelHandler : MonoBehaviour
 
         // Additional Changes
         levelText.text = "Level " + currentLevel;
-        expText.text = currentExperience + "/" + maxExperience;
+        expText.text = String.Format("{0:0}", (float)currentExperience / (float)maxExperience * 100f) + "%";
         expBar.maxValue = maxExperience;
         expBar.value = currentExperience;
     }
